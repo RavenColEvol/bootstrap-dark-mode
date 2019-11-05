@@ -458,3 +458,49 @@ input:checked + .slider:before {
     align-items:center;
     justify-content:center;
 }
+
+.img-scroll {
+    width: 100%;
+    height: 400px;
+    background-size: 100% !important;
+    background-position-y: 0%;
+    position: relative;
+    overflow: hidden;
+}
+.img-scroll:hover {
+    animation: updown 3s alternate infinite;
+}
+
+.img-scroll-caption {
+    position: absolute;
+    width:100%;
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: 500;
+    padding: 5px;
+    bottom: 0;
+    color: var(--color-text);
+    background: rgba(58,59,59,0.5);
+    transition: .5s all ease-out;
+}
+.btn-preview {
+    position: absolute;
+    bottom:-38px;
+    opacity:0 ;
+    transition: .5s all ease-out;
+}
+.img-scroll:hover .btn-preview{
+    bottom:0px;
+    opacity: 1;
+}
+.img-scroll:hover .img-scroll-caption {
+    bottom:38px;
+}
+@keyframes updown {
+    from {
+        background-position-y: 0%;
+    }
+    to {
+        background-position-y: 100%;
+    }
+}
